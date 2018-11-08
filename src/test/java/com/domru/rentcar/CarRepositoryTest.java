@@ -28,6 +28,7 @@ public class CarRepositoryTest {
         Car car = new Car("Tesla", "Model X", "White", "ABC-1234", 2017, 86000);
         entityManager.persistAndFlush(car);
 
+
         assertThat(carRepository).isNotNull();
     }
 
