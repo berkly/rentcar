@@ -30,7 +30,7 @@ class Login extends Component {
             username: this.state.username,
             password: this.state.password
         };
-        fetch(SERVER_URL + 'login',
+        fetch(SERVER_URL + '/login',
             {
                 method: 'POST',
                 body: JSON.stringify(user)
@@ -53,13 +53,14 @@ class Login extends Component {
         } else {
             return (
                 <div>
+                    <br/>
                     <TextField name="username"
                                placeholder="Username"
                                onChange={this.handleChange}/><br/>
                     <TextField name="password"
                                placeholder="Password"
                                onChange={this.handleChange}/><br/><br/>
-                    <Button variant="raised" color="primary" onClick={this.login}>Login</Button>
+                    <Button variant="contained" color="primary" onClick={this.login}>Login</Button>
                     <Snackbar open={this.state.open}
                               onClose={this.handleClose}
                               autoHideDuration={1500}

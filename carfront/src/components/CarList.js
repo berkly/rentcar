@@ -19,6 +19,10 @@ class CarList extends Component {
         }
     }
 
+    componentDidMount() {
+        this.getCars();
+    }
+
     handleClose = (event, reason) => {
         this.setState({open: false});
     };
@@ -84,19 +88,19 @@ class CarList extends Component {
     renderEditable = (cellInfo) => {
         return (
             <div
-                style={{backgroundColor: "#fafafa"}}
+                style={{ backgroundColor: "#fafafa" }}
                 contentEditable
                 suppressContentEditableWarning
                 onBlur={e => {
                     const data = [...this.state.cars];
-                    data[cellInfo.index][cellInfo.column.id] = e.target.innerHtml;
-                    this.setState({cars: data})
+                    data[cellInfo.index][cellInfo.column.id] = e.target.innerHTML;
+                    this.setState({ cars: data });
                 }}
                 dangerouslySetInnerHTML={{
                     __html: this.state.cars[cellInfo.index][cellInfo.column.id]
-                }}>
-            </div>
-        )
+                }}
+            />
+        );
     };
 
     confirmDelete = (link) => {
@@ -113,11 +117,6 @@ class CarList extends Component {
             ]
         })
     };
-
-    componentDidMount() {
-        this.getCars();
-    }
-
 
     render() {
         const columns = [

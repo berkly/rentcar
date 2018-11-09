@@ -13,7 +13,6 @@ class AddCar extends Component {
             color: '',
             price: ''
         };
-        this.addDialog = React.createRef();
 
     }
 
@@ -43,7 +42,7 @@ class AddCar extends Component {
     render() {
         return (
             <div>
-                <SkyLight hideOnOverlayClicked ref={this.addDialog}>
+                <SkyLight hideOnOverlayClicked ref="addDialog">
                     <h3>New car</h3>
                     <form>
                         <TextField label="Brand" placeholder="Brand" name="brand" onChange={this.handleChange}/><br/>
@@ -58,10 +57,10 @@ class AddCar extends Component {
                     </form>
                 </SkyLight>
                 <div>
-                    <Button variant="raised"
+                    <Button variant="contained"
                             color="primary"
                             style={{'margin': '10px'}}
-                            onClick={() => this.addDialog.show()}>New car</Button>
+                            onClick={() => this.refs.addDialog.show()}>New car</Button>
                 </div>
             </div>
         );

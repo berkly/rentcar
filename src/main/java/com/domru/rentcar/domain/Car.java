@@ -12,22 +12,14 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
-    private String brand;
-    @NotBlank
-    private String model;
-    @NotBlank
-    private String color;
-    @NotBlank
-    private String registerNumber;
-    @NotNull
+    private String brand, model, color, registerNumber;
     private Integer year, price;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "owner")
     private Owner owner;
 
-    public Car(@NotBlank String brand, @NotBlank String model, @NotBlank String color, @NotBlank String registerNumber, @NotNull Integer year, @NotNull Integer price, Owner owner) {
+    public Car(String brand, String model, String color, String registerNumber, Integer year, Integer price, Owner owner) {
         this.brand = brand;
         this.model = model;
         this.color = color;
@@ -37,7 +29,7 @@ public class Car {
         this.owner = owner;
     }
 
-    public Car(@NotBlank String brand, @NotBlank String model, @NotBlank String color, @NotBlank String registerNumber, @NotNull Integer year, @NotNull Integer price) {
+    public Car(String brand, String model, String color, String registerNumber, Integer year, Integer price) {
         this.brand = brand;
         this.model = model;
         this.color = color;

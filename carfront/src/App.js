@@ -9,9 +9,9 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <AppBar position="static" color="default">
+                {/*<AppBar position="static" color="default">
                     <Toolbar><CarList/></Toolbar>
-                </AppBar>
+                </AppBar>*/}
                 <Login/>
             </div>
         );
