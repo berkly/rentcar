@@ -1,4 +1,5 @@
 /target/
+
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
@@ -20,6 +21,7 @@
 /nbproject/private/
 /build/
 /nbbuild/
+/node_modules/
 /dist/
 /nbdist/
 /.nb-gradle/
